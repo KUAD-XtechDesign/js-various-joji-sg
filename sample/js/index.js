@@ -24,7 +24,7 @@ function init() {
 
     // Load GLTF or GLB
     const loader = new THREE.GLTFLoader();
-    const url = 'http://localhost/Three.js_sample/VRoid.glb';
+    const url = 'http://localhost/Three.js_sample/tjsmount.glb';
     
     let model = null;
     loader.load(
