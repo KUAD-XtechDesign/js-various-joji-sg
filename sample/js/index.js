@@ -25,7 +25,7 @@ function init() {
 
   // Load GLTF or GLB
   const loader = new THREE.GLTFLoader();
-  const tjsmountUrl = "http://localhost:8080/tjsmount.glb";
+  const tjsmountUrl = "https://kuad-xtechdesign.github.io/js-various-joji-sg/tjsmount.glb";
 
   loader.load(
     tjsmountUrl,
