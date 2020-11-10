@@ -22,18 +22,7 @@ const sphere = new THREE.Mesh(
   new THREE.MeshPhongMaterial( { color: 0x0074df } )
 );
 sphere.position.set(0, 1, 0);
-scene.add(grid, sphere);
-
-const loader = new THREE.GLTFLoader();
-const url = 'tjsmount.gltf';
-
-loader.load(url, (data) => {
-
-  const gltf = data;
-  const object = gltf.scene;
-  scene.add(object);
-
-});
+scene.add(grid,sphere);
 
 // OrbitControls の追加
 const controls = new THREE.OrbitControls( camera, renderer.domElement );
@@ -42,7 +31,7 @@ controls.userPanSpeed = 0.0;
 controls.maxDistance = 5000.0;
 controls.maxPolarAngle = Math.PI * 0.495;
 controls.autoRotate = true;
-controls.autoRotateSpeed = 1.0;
+controls.autoRotateSpeed = 0.2;
 
 // レンダリング
 const animation = () => {

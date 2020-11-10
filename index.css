@@ -21,3 +21,9 @@ body {
     margin: 0;
     padding: 0;
 }
+.title {
+    position: absolute;
+    top: 100px;
+    z-index: 2;
+    }
+    
