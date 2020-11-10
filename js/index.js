@@ -1,94 +1,57 @@
-window.addEventListener('DOMContentLoaded', init);
-function init() {
-    // レンダラーを作成
-    const renderer = new THREE.WebGLRenderer({
-        canvas: document.querySelector('#canvas')
-    });
-    // ウィンドウサイズ設定
-    width = document.getElementById('main_canvas').getBoundingClientRect().width;
-    height = document.getElementById('main_canvas').getBoundingClientRect().height;
-    renderer.setPixelRatio(1);
-    renderer.setSize(width, height);
-    console.log(window.devicePixelRatio);
-    console.log(width+", "+height);
- 
-    // シーンを作成
-    const scene = new THREE.Scene();
- 
-    // カメラを作成
-    camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
-    camera.position.set(0, 400, -1000);
-    
-    const controls = new THREE.OrbitControls(camera);
-    //camera.lookAt(new THREE.Vector3(0, 400, 0));
+// 幅、高さ取得
+const width  = window.innerWidth;
+const height = window.innerHeight;
 
-    // Load GLTF or GLB
-    const loader = new THREE.GLTFLoader();
-    const url = 'http://localhost/Three.js_sample/tjsmount.glb';
-    
-    let model = null;
-    loader.load(
-        url, 
-        function ( gltf ){
-            model = gltf.scene;
-            model.name = "model_with_cloth";
-            model.scale.set(400.0, 400.0, 400.0);
-            model.position.set(0,-400,0);
-            scene.add( gltf.scene );
+// レンダラの作成、DOMに追加
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(width, height);
+renderer.setClearColor(0xf3f3f3, 1.0);
+document.body.appendChild(renderer.domElement);
 
-            model["test"] = 100;
-            console.log("model");
-        },
-        function ( error ) {
-            console.log( 'An error happened' );
-            console.log( error );
-        }
-    );
-    renderer.gammaOutput = true;
-    renderer.gammaFactor = 2.2;
+// シーンの作成、カメラの作成と追加、ライトの作成と追加
+const scene  = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(50, width / height, 1, 100 );
+camera.position.set(0, 1, 5);
+const light  = new THREE.AmbientLight(0xffffff, 1);
+scene.add(light);
 
+// メッシュの作成と追加
+const grid   = new THREE.GridHelper(10, 5);
+const sphere = new THREE.Mesh(
+  new THREE.SphereGeometry(1),
+  new THREE.MeshPhongMaterial( { color: 0x0074df } )
+);
+sphere.position.set(0, 1, 0);
+scene.add(grid, sphere);
 
-    // 平行光源
-    const light = new THREE.DirectionalLight(0xFFFFFF);
-    light.intensity = 2; // 光の強さを倍に
-    light.position.set(1, 1, 1);
-    // シーンに追加
-    scene.add(light);
+const loader = new THREE.GLTFLoader();
+const url = 'tjsmount.gltf';
 
-    // 初回実行
-    tick();
-    function tick() {
-        controls.update();
-        
-        scene.traverse(function(obj) {
-            if(obj.name == "J_Bip_C_Chest"){
-                obj.rotation.z += 2 /180*3.1415;
-            }
-        });
-        if (model != null){
-            console.log(model);
-        }
-        renderer.render(scene, camera);
-        requestAnimationFrame(tick);
-    }
-    
+loader.load(url, (data) => {
 
-    // 初期化のために実行
-    onResize();
-    // リサイズイベント発生時に実行
-    window.addEventListener('resize', onResize);
-    function onResize() {
-        // サイズを取得
-        width = document.getElementById('main_canvas').getBoundingClientRect().width;
-        height = document.getElementById('main_canvas').getBoundingClientRect().height;
+  const gltf = data;
+  const object = gltf.scene;
+  scene.add(object);
 
-        // レンダラーのサイズを調整する
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setSize(width, height);
+});
 
-        // カメラのアスペクト比を正す
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-        console.log(width);
-    }
-}
+// OrbitControls の追加
+const controls = new THREE.OrbitControls( camera, renderer.domElement );
+controls.userPan = false;
+controls.userPanSpeed = 0.0;
+controls.maxDistance = 5000.0;
+controls.maxPolarAngle = Math.PI * 0.495;
+controls.autoRotate = true;
+controls.autoRotateSpeed = 1.0;
+
+// レンダリング
+const animation = () => {
+
+  renderer.render(scene, camera);
+  controls.update();
+
+  requestAnimationFrame(animation);
+
+};
+
+animation();
