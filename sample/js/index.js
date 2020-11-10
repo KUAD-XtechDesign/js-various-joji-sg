@@ -50,7 +50,7 @@ function init() {
     }
   );
 
-  const droneUrl = "http://localhost:8080/drone_costum.glb";
+  const droneUrl = "https://kuad-xtechdesign.github.io/js-various-joji-sg/tjsmount.glb";
   let drone;
   // ドローンロード
   loader.load(
