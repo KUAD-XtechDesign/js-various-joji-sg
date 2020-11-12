@@ -8,8 +8,7 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0,
-                1
+                0
             ]
         }
     ],
@@ -27,20 +26,13 @@
                 2.0614538192749023,
                 0
             ]
-        },
+        }
+    ],
+    "materials" : [
         {
-            "mesh" : 1,
-            "name" : "Icosphere.001",
-            "scale" : [
-                1,
-                -2.7828330993652344,
-                1
-            ],
-            "translation" : [
-                -0.2637518644332886,
-                1.6119282245635986,
-                -2.220630645751953
-            ]
+            "doubleSided" : true,
+            "name" : "Material.001",
+            "pbrMetallicRoughness" : {}
         }
     ],
     "meshes" : [
@@ -51,18 +43,8 @@
                     "attributes" : {
                         "POSITION" : 0
                     },
-                    "indices" : 1
-                }
-            ]
-        },
-        {
-            "name" : "Icosphere.001",
-            "primitives" : [
-                {
-                    "attributes" : {
-                        "POSITION" : 2
-                    },
-                    "indices" : 1
+                    "indices" : 1,
+                    "material" : 0
                 }
             ]
         }
@@ -71,63 +53,42 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 12,
+            "count" : 24,
             "max" : [
-                4.134208679199219,
-                1.5680267810821533,
-                3.4129257202148438
+                5.258462429046631,
+                1.484291434288025,
+                5.765644073486328
             ],
             "min" : [
-                -3.2500381469726562,
-                -0.33544921875,
-                -3.260204792022705
+                -2.1892805099487305,
+                -0.41862455010414124,
+                -4.503235816955566
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5123,
-            "count" : 60,
+            "count" : 120,
             "type" : "SCALAR"
-        },
-        {
-            "bufferView" : 2,
-            "componentType" : 5126,
-            "count" : 12,
-            "max" : [
-                1.6090577840805054,
-                1.8797414302825928,
-                2.3113865852355957
-            ],
-            "min" : [
-                -7.884518623352051,
-                -1.1539037227630615,
-                -4.378161430358887
-            ],
-            "type" : "VEC3"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 144,
+            "byteLength" : 288,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 120,
-            "byteOffset" : 144
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 144,
-            "byteOffset" : 264
+            "byteLength" : 240,
+            "byteOffset" : 288
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 408,
-            "uri" : "data:application/octet-stream;base64,uICAPwDAq779p4A9PzwUQIBnwj3D+w8/tjk5PX6eTTyyC58/+kgmQGvroz55hYS/8NIiv/JvDj71Qvo+WhoSPnPgwj5WFnC/cEuEQCubSj+sHDS9TdjPP4DFHT9gbVpAoABQwCUZGj8QoYY/9mUFwFy7eT/DVwDAybw3P4EzTz8yp1DADkzDPhq1yD/gss09AAABAAIAAQAAAAMAAAACAAQAAAAEAAUAAAAFAAMAAQADAAYAAgABAAcABAACAAgABQAEAAkAAwAFAAoAAQAGAAcAAgAHAAgABAAIAAkABQAJAAoAAwAKAAYABwAGAAsACAAHAAsACQAIAAsACgAJAAsABgAKAAsAvVjevx6zk78QBHW/EFgMv/mB1r48VOy+7ulSwDTVAb/cEbE+UFY6v+uQUj2uxgfA3bqSwJ9fiL4gFbS+TyeIwLLpkj0YKOO/m/XNP/EOcD9Ez66/yOh+vwkFOz/C7RNA+k38wNcqWT+I0jA+YkLwwOuHoz/uaTjAfstzwGfAhD/mGYzAgJ56wF6b8D+9vl2/"
+            "byteLength" : 528,
+            "uri" : "data:application/octet-stream;base64,9CjzP/VV1r5DJCdAFWlgQCB9QDxVWDFAwkltPwykkL3xsXlAvKBpQOiqcj6I7Ik/oJyQPrBvZD05KVZAtl6CPz58lj4CYPE/U0WoQDBQNT90gMw/q8IvQIV6CD8ogLhALB0MwO6P6z50qIZA9O8hv8/POz989bk/4ZCnP2RpNT9cBQi/F/aOP0P9vT9/Cy9AnzqaP8Av1j1VozXAU5AiP7KfWz5IaIHAiJvlP4AAWj4nOUjA5X4Sv4CRSr0O7wrAEEqXP6gX5DzsrwDAirzNPh9Ylz5Sl9G/jn/dvoycIz+CGpDAJ1keQAS7Mz+OtY3AUEZBQNyqGz+ymgm/Kt32Pgi8ED9ApB4+rXt7v6U15D4/65a/LzRVPxKpmD9OEPq/AAABAAIAAQAAAAMAAAACAAQAAAAEAAUAAAAFAAMAAQADAAYAAgABAAcABAACAAgABQAEAAkAAwAFAAoAAQAGAAcAAgAHAAgABAAIAAkABQAJAAoAAwAKAAYABwAGAAsACAAHAAsACQAIAAsACgAJAAsABgAKAAsADAANAA4ADQAMAA8ADAAOABAADAAQABEADAARAA8ADQAPABIADgANABMAEAAOABQAEQAQABUADwARABYADQASABMADgATABQAEAAUABUAEQAVABYADwAWABIAEwASABcAFAATABcAFQAUABcAFgAVABcAEgAWABcA"
         }
     ]
 }
