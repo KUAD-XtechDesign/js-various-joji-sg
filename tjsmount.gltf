@@ -1,0 +1,133 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.3.48",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Icosphere",
+            "scale" : [
+                1,
+                -2.7828330993652344,
+                1
+            ],
+            "translation" : [
+                0,
+                2.0614538192749023,
+                0
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Icosphere.001",
+            "scale" : [
+                1,
+                -2.7828330993652344,
+                1
+            ],
+            "translation" : [
+                -0.2637518644332886,
+                1.6119282245635986,
+                -2.220630645751953
+            ]
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Icosphere",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0
+                    },
+                    "indices" : 1
+                }
+            ]
+        },
+        {
+            "name" : "Icosphere.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 2
+                    },
+                    "indices" : 1
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 12,
+            "max" : [
+                4.134208679199219,
+                1.5680267810821533,
+                3.4129257202148438
+            ],
+            "min" : [
+                -3.2500381469726562,
+                -0.33544921875,
+                -3.260204792022705
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5123,
+            "count" : 60,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 12,
+            "max" : [
+                1.6090577840805054,
+                1.8797414302825928,
+                2.3113865852355957
+            ],
+            "min" : [
+                -7.884518623352051,
+                -1.1539037227630615,
+                -4.378161430358887
+            ],
+            "type" : "VEC3"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 144,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 120,
+            "byteOffset" : 144
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 144,
+            "byteOffset" : 264
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 408,
+            "uri" : "data:application/octet-stream;base64,uICAPwDAq779p4A9PzwUQIBnwj3D+w8/tjk5PX6eTTyyC58/+kgmQGvroz55hYS/8NIiv/JvDj71Qvo+WhoSPnPgwj5WFnC/cEuEQCubSj+sHDS9TdjPP4DFHT9gbVpAoABQwCUZGj8QoYY/9mUFwFy7eT/DVwDAybw3P4EzTz8yp1DADkzDPhq1yD/gss09AAABAAIAAQAAAAMAAAACAAQAAAAEAAUAAAAFAAMAAQADAAYAAgABAAcABAACAAgABQAEAAkAAwAFAAoAAQAGAAcAAgAHAAgABAAIAAkABQAJAAoAAwAKAAYABwAGAAsACAAHAAsACQAIAAsACgAJAAsABgAKAAsAvVjevx6zk78QBHW/EFgMv/mB1r48VOy+7ulSwDTVAb/cEbE+UFY6v+uQUj2uxgfA3bqSwJ9fiL4gFbS+TyeIwLLpkj0YKOO/m/XNP/EOcD9Ez66/yOh+vwkFOz/C7RNA+k38wNcqWT+I0jA+YkLwwOuHoz/uaTjAfstzwGfAhD/mGYzAgJ56wF6b8D+9vl2/"
+        }
+    ]
+}
