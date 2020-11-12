@@ -26,10 +26,10 @@ scene.add(grid,sphere);
 
 // OrbitControls の追加
 const controls = new THREE.OrbitControls( camera, renderer.domElement );
-controls.userPan = false;
-controls.userPanSpeed = 0.0;
-controls.maxDistance = 5000.0;
-controls.maxPolarAngle = Math.PI * 0.495;
+// controls.userPan = false;
+// controls.userPanSpeed = 0.0;
+// controls.maxDistance = 5000.0;
+// controls.maxPolarAngle = Math.PI * 0.495;
 controls.autoRotate = true;
 controls.autoRotateSpeed = 0.2;
 
@@ -44,3 +44,7 @@ const animation = () => {
 };
 
 animation();
+
+document.getElementById("text-button").onclick = function() {
+  document.getElementById("text").innerHTML = "クリックされた！";
+};
