@@ -19,25 +19,28 @@ scene.add(light);
 const grid   = new THREE.GridHelper(10, 5);
 const sphere = new THREE.Mesh(
   new THREE.SphereGeometry(1),
-  new THREE.MeshPhongMaterial( { color: 0x0074df } )
+  new THREE.MeshPhongMaterial( { color: 0x0074df } ),
+  new THREE.SphereGeometry(2),
+  new THREE.MeshPhongMaterial( { color: 0x0050df } )
+
 );
 sphere.position.set(0, 1, 0);
 scene.add(grid,sphere);
 
-// OrbitControls の追加
-const controls = new THREE.OrbitControls( camera, renderer.domElement );
-// controls.userPan = false;
-// controls.userPanSpeed = 0.0;
-// controls.maxDistance = 5000.0;
-// controls.maxPolarAngle = Math.PI * 0.495;
-controls.autoRotate = true;
-controls.autoRotateSpeed = 0.2;
+// // OrbitControls の追加
+// const controls = new THREE.OrbitControls( camera, renderer.domElement );
+// // controls.userPan = false;
+// // controls.userPanSpeed = 0.0;
+// // controls.maxDistance = 5000.0;
+// // controls.maxPolarAngle = Math.PI * 0.495;
+// controls.autoRotate = true;
+// controls.autoRotateSpeed = 0.2;
 
 // レンダリング
 const animation = () => {
 
   renderer.render(scene, camera);
-  controls.update();
+  // controls.update();
 
   requestAnimationFrame(animation);
 
@@ -45,6 +48,9 @@ const animation = () => {
 
 animation();
 
-document.getElementById("text-button").onclick = function() {
-  document.getElementById("text").innerHTML = "クリックされた！";
-};
+
+$(function(){
+  $("#canvas").on("click",function(){
+    console.log("ok")
+  })
+})
