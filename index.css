@@ -14,44 +14,15 @@ body {
     border: 0;
     padding: 0;
     overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 #main_canvas {
     width : 100%;
     height : 100%;
     margin: 0;
     padding: 0;
-    z-index: 1;
-    position:fixed;
 }
 .title {
     position: absolute;
-    margin: 0 auto;
+    top: 100px;
     z-index: 2;
     }
-.box {
-  margin: 10px;
-  background: #111738;
-  display: flex;
-  justify-content: center;
-  align-items: center;  z-index: 2;
-
-}
-
-.text-centered {
-  font: bold 100px "Source Code Pro", "consolas", "Menlo", "Courier";
-  fill: #ffffff;
-  dominant-baseline: middle;
-  text-anchor: middle;
-
-}
-
-#text-button {
-    display: block;
-    cursor: pointer;
-    width: 160px;
-    text-align: center;
-    border: 1px solid #232323;
-  }
