@@ -26,10 +26,18 @@ const sphere = new THREE.Mesh(
 sphere.position.set(0, 2, 0);
 scene.add(sphere);
 
-let geometry = new THREE.BoxGeometry(10, 10, 10);
-let material = THREE.MeshPhongMaterial({wireframe: true});
-let box= new THREE.Line(geometry, material);
-scene.add(box);
+//「立方体」の生成
+var cube = new THREE.Mesh(
+  //立方体の大きさ(300,300,300)                                           
+  new THREE.CubeGeometry(300,300,300),
+  //マテリアルはMeshPhongMaterial                          
+  new THREE.MeshPhongMaterial({                                      
+            color: 0x990000, //球の色
+            wireframe: true //ワイヤーフレーム有効
+   }));
+     
+//sceneにcubeを追加
+   scene.add(cube);       
 
 
 const loader = new THREE.GLTFLoader();
