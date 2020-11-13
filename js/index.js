@@ -24,7 +24,7 @@ const sphere = new THREE.Mesh(
 );
 
 sphere.position.set(0, 2, 0);
-scene.add(grid, sphere);
+scene.add(sphere);
 
 let geometry = new THREE.BoxGeometry(10, 1, 1);
 let material = new THREE.LineBasicMaterial({ color: 0xff6371});
@@ -40,7 +40,7 @@ loader.load(url, (data) => {
   const gltf = data;
   const object = gltf.scene;
   new THREE.MeshBasicMaterial({color: 0x6699FF})
-  object.position.set(0,-5,0)
+  object.position.set(0,-3,0)
   scene.add(object);
 
 });
