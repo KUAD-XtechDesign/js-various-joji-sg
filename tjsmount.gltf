@@ -33,6 +33,7 @@
             "doubleSided" : true,
             "name" : "bluiii",
             "pbrMetallicRoughness" : {}
+            
         }
     ],
     "meshes" : [

@@ -39,7 +39,10 @@ loader.load(url, (data) => {
 
   const gltf = data;
   const object = gltf.scene;
-  new THREE.MeshBasicMaterial({color: 0x6699FF})
+  const object = new THREE.mesh(
+    new THREE.MeshBasicMaterial({color: 0x6699FF})
+    ) ;
+  object.position.set(0,-5,0);
   scene.add(object);
 
 });
