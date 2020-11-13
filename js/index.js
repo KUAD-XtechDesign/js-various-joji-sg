@@ -26,8 +26,8 @@ const sphere = new THREE.Mesh(
 sphere.position.set(0, 2, 0);
 scene.add(sphere);
 
-let geometry = new THREE.BoxGeometry(10, 1, 1);
-let material = new THREE.LineBasicMaterial({ color: 0xff6371});
+let geometry = new THREE.BoxGeometry(10, 10, 10);
+let material = THREE.MeshPhongMaterial({wireframe: true});
 let box= new THREE.Line(geometry, material);
 scene.add(box);
 
